@@ -18,7 +18,7 @@ export async function exportPWA() {
     for (const file of FILES) {
 
         const source = path.join("templates", file);
-        const target = path.join("output", file);
+        const target = path.join("docs", file);
 
         if (!fs.existsSync(source)) {
             throw new Error(`Hiányzik: templates/${file}`);

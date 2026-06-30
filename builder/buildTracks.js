@@ -78,7 +78,7 @@ export async function buildTracks() {
 
     });
 
-    fs.mkdirSync("output", { recursive: true });
+    fs.mkdirSync("docs", { recursive: true });
 
     const text =
 `const tracks = ${JSON.stringify(tracks, null, 4)};
@@ -87,7 +87,7 @@ export default tracks;
 `;
 
     fs.writeFileSync(
-        "output/tracks.js",
+    "docs/tracks.js",
         text,
         "utf8"
     );
