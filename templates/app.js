@@ -1,5 +1,8 @@
 import tracks from "./tracks.js";
+import playlist from "./playlist.js";
 
+const appTitle = document.getElementById("appTitle");
+const playlistButton = document.getElementById("playlistButton");
 const input = document.getElementById("trackNumber");
 const searchButton = document.getElementById("searchButton");
 const playButton = document.getElementById("playButton");
@@ -92,3 +95,6 @@ window.addEventListener("load", () => {
     input.focus();
 
 });
+appTitle.textContent = playlist.title;
+
+playlistButton.href = playlist.playlistUrl;
