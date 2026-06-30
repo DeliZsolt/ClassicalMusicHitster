@@ -1,103 +1,123 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Hitster</title>
+    <title>Hitster</title>
 
-<link rel="manifest" href="manifest.json">
-<link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <div class="playlist-header">
+        <div class="playlist-header">
 
-    <img
-        id="playlistArtwork"
-        class="playlist-artwork"
-        src=""
-        alt="Playlist borító">
+            <img
+                id="playlistArtwork"
+                class="playlist-artwork"
+                src=""
+                alt="Playlist borító">
 
-    <h1 id="appTitle">🎼 Hitster</h1>
+            <h1 id="appTitle">🎼 Hitster</h1>
 
-    <p id="trackCount"></p>
+            <p id="trackCount"></p>
 
-    <a
-        id="playlistButton"
-        class="playlist-button"
-        href="#"
-        target="_blank">
+            <a
+                id="playlistButton"
+                class="playlist-button"
+                href="#"
+                target="_blank">
 
-        🎵 Apple Music lejátszási lista
+                🎵 Apple Music lejátszási lista
 
-    </a>
+            </a>
 
-</div>
+        </div>
 
-    <div class="search">
+        <p class="search-label">
 
-        <input
-            id="trackNumber"
-            type="number"
-            placeholder="Kártya sorszáma">
+    Add meg a Hitster kártya sorszámát
 
-        <button id="searchButton">
-            Keresés
-        </button>
+</p>
+
+        <div class="search">
+
+            <input
+                id="trackNumber"
+                type="number"
+                placeholder="Kártya sorszáma">
+
+            <button id="searchButton">
+
+                Keresés
+
+            </button>
+
+        </div>
+
+        <div id="error" class="error hidden"></div>
+
+        <div id="result" class="card hidden">
+
+            <img
+                id="artwork"
+                class="track-artwork"
+                src=""
+                alt="Albumborító">
+
+            <h2 id="title"></h2>
+
+            <p>
+
+                <strong>Album:</strong>
+
+                <span id="album"></span>
+
+            </p>
+
+            <p>
+
+                <strong>Zeneszerző:</strong>
+
+                <span id="composer"></span>
+
+            </p>
+
+            <p>
+
+                <strong>Előadó:</strong>
+
+                <span id="artist"></span>
+
+            </p>
+
+            <p>
+
+                <strong>Év:</strong>
+
+                <span id="year"></span>
+
+            </p>
+
+            <button id="playButton">
+
+                ▶ Megnyitás Apple Musicban
+
+            </button>
+
+        </div>
 
     </div>
 
-    <div id="error" class="error hidden"></div>
-
-    <div id="result" class="card hidden">
-<img
-    id="artwork"
-    class="track-artwork"
-    src=""
-    alt="Albumborító">
-        <h2 id="title"></h2>
-
-        <p>
-
-            <strong>Zeneszerző:</strong>
-
-            <span id="composer"></span>
-
-        </p>
-
-        <p>
-
-            <strong>Előadó:</strong>
-
-            <span id="artist"></span>
-
-        </p>
-
-        <p>
-
-            <strong>Év:</strong>
-
-            <span id="year"></span>
-
-        </p>
-
-        <button id="playButton">
-
-            ▶ Megnyitás Apple Musicban
-
-        </button>
-
-    </div>
-
-</div>
-
-<script type="module" src="app.js"></script>
+    <script type="module" src="app.js"></script>
 
 </body>
+
 </html>
