@@ -16,15 +16,29 @@
 
 <div class="container">
 
+    <div class="playlist-header">
+
+    <img
+        id="playlistArtwork"
+        class="playlist-artwork"
+        src=""
+        alt="Playlist borító">
+
     <h1 id="appTitle">🎼 Hitster</h1>
 
-<p style="text-align:center;margin-bottom:20px;">
-    <a id="playlistButton"
-       href="#"
-       target="_blank">
-       🎵 Apple Music lejátszási lista
+    <p id="trackCount"></p>
+
+    <a
+        id="playlistButton"
+        class="playlist-button"
+        href="#"
+        target="_blank">
+
+        🎵 Apple Music lejátszási lista
+
     </a>
-</p>
+
+</div>
 
     <div class="search">
 
@@ -42,7 +56,11 @@
     <div id="error" class="error hidden"></div>
 
     <div id="result" class="card hidden">
-
+<img
+    id="artwork"
+    class="track-artwork"
+    src=""
+    alt="Albumborító">
         <h2 id="title"></h2>
 
         <p>

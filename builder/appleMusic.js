@@ -1,12 +1,19 @@
+import { readPlaylist } from "./readPlaylist.js";
 import { buildTracks } from "./buildTracks.js";
 import { buildPlaylist } from "./buildPlaylist.js";
 import { exportPWA } from "./exportPWA.js";
 
 export async function buildAppleMusic(playlistUrl) {
 
-    await buildTracks();
+    const { responses } = readPlaylist();
 
-    await buildPlaylist(playlistUrl);
+    const tracks = await buildTracks(responses);
+
+    await buildPlaylist(
+        responses,
+        playlistUrl,
+        tracks.length
+    );
 
     await exportPWA();
 

@@ -15,6 +15,9 @@ const composer = document.getElementById("composer");
 const artist = document.getElementById("artist");
 const year = document.getElementById("year");
 
+const playlistArtwork = document.getElementById("playlistArtwork");
+const trackCount = document.getElementById("trackCount");
+const artwork = document.getElementById("artwork");
 let currentTrack = null;
 
 function showError(message) {
@@ -59,6 +62,8 @@ function searchTrack() {
 
     currentTrack = track;
 
+    artwork.src = track.artwork;
+
     title.textContent = track.title;
     composer.textContent = track.composer;
     artist.textContent = track.artist;
@@ -90,11 +95,14 @@ input.addEventListener("keydown", e => {
 
 });
 
-window.addEventListener("load", () => {
-
-    input.focus();
-
-});
 appTitle.textContent = playlist.title;
 
 playlistButton.href = playlist.playlistUrl;
+
+if (playlist.artwork) {
+    playlistArtwork.src = playlist.artwork;
+} else {
+    playlistArtwork.style.display = "none";
+}
+
+trackCount.textContent = `${playlist.trackCount} darab`;

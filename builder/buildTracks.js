@@ -1,19 +1,8 @@
 import fs from "fs";
-import path from "path";
 
-export async function buildTracks() {
+export async function buildTracks(responses) {
 
     console.log("tracks.js készítése...");
-
-    const jsonPath = path.resolve("networkResponses.json");
-
-    if (!fs.existsSync(jsonPath)) {
-        throw new Error("Nem találom a networkResponses.json fájlt.");
-    }
-
-    const responses = JSON.parse(
-        fs.readFileSync(jsonPath, "utf8")
-    );
 
     const map = new Map();
 
@@ -65,16 +54,22 @@ export async function buildTracks() {
         const a = song.attributes;
 
         return {
-            id: index + 1,
-            title: a.name,
-            artist: a.artistName,
-            composer: a.composerName ?? "",
-            year: a.releaseDate
-                ? a.releaseDate.substring(0,4)
-                : "",
-            album: a.albumName,
-            appleMusicUrl: `https://music.apple.com/hu/song/${song.id}`
-        };
+    id: index + 1,
+    title: a.name,
+    artist: a.artistName,
+    composer: a.composerName ?? "",
+    year: a.releaseDate
+        ? a.releaseDate.substring(0,4)
+        : "",
+    album: a.albumName,
+
+    artwork:
+        a.artwork?.url
+            ?.replace("{w}", "600")
+            ?.replace("{h}", "600") ?? "",
+
+    appleMusicUrl: `https://music.apple.com/hu/song/${song.id}`
+};
 
     });
 
@@ -86,13 +81,15 @@ export async function buildTracks() {
 export default tracks;
 `;
 
-    fs.writeFileSync(
-    "docs/tracks.js",
+        fs.writeFileSync(
+        "docs/tracks.js",
         text,
         "utf8"
     );
 
     console.log("");
-    console.log("✅ output/tracks.js elkészült.");
+    console.log("✅ docs/tracks.js elkészült.");
+
+    return tracks;
 
 }
