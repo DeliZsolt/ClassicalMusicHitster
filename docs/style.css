@@ -267,3 +267,14 @@ button:hover {
     }
 
 }
+.footer {
+
+    margin-top: 40px;
+
+    text-align: center;
+
+    color: #999;
+
+    font-size: .8rem;
+
+}

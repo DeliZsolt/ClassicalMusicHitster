@@ -1,6 +1,7 @@
 import { readPlaylist } from "./readPlaylist.js";
 import { buildTracks } from "./buildTracks.js";
 import { buildPlaylist } from "./buildPlaylist.js";
+import { buildVersion } from "./buildVersion.js";
 import { exportPWA } from "./exportPWA.js";
 
 export async function buildAppleMusic(playlistUrl) {
@@ -16,5 +17,6 @@ export async function buildAppleMusic(playlistUrl) {
     );
 
     await exportPWA();
+    await buildVersion();
 
 }

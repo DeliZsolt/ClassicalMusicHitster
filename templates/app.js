@@ -1,5 +1,6 @@
 import tracks from "./tracks.js";
 import playlist from "./playlist.js";
+import version from "./version.js";
 
 const appTitle = document.getElementById("appTitle");
 const playlistButton = document.getElementById("playlistButton");
@@ -18,6 +19,9 @@ const year = document.getElementById("year");
 const playlistArtwork = document.getElementById("playlistArtwork");
 const trackCount = document.getElementById("trackCount");
 const artwork = document.getElementById("artwork");
+
+const versionLabel = document.getElementById("version");
+
 let currentTrack = null;
 
 function showError(message) {
@@ -106,3 +110,4 @@ if (playlist.artwork) {
 }
 
 trackCount.textContent = `${playlist.trackCount} darab`;
+versionLabel.textContent = `Build ${version.build}`;
