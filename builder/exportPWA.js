@@ -13,7 +13,7 @@ export async function exportPWA() {
     console.log("");
     console.log("PWA export...");
 
-    fs.mkdirSync("output", { recursive: true });
+    fs.mkdirSync("docs", { recursive: true });
 
     for (const file of FILES) {
 
