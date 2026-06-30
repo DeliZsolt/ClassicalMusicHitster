@@ -1,6 +1,8 @@
 # 🎼 Classical Music Hitster
 
-Egy Apple Music playlistből generált Hitster webalkalmazás.
+![Classical Music Hitster](assets/screenshot.png)
+
+Egy Apple Music playlistből készült Hitster webalkalmazás.
 
 ## Funkciók
 
